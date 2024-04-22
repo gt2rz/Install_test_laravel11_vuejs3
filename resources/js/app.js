@@ -1,14 +1,4 @@
 import './bootstrap';
-import { createApp } from 'vue';
+import spa from './spa_vue/app';
 
-import Welcome from './components/Welcome.vue';
-
-const app = createApp({
-    components: {
-        Welcome,
-    },
-}).mount('#app');
-
-app.config.errorHandler = (err) => {
-    console.error(err);
-};
+spa.mount('#app');

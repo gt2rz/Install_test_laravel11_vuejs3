@@ -18,10 +18,6 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        uyuiyiuy
-        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50" id="app">
-            <!-- Entrypoint for Vue SPA -->
-            <Welcome />
-        </div>
+        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50" id="app"></div>
     </body>
 </html>
