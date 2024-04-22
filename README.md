@@ -51,3 +51,7 @@ vue({
 }),
 ```
 
+agregar esto en el head de app.blade.php
+
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+
