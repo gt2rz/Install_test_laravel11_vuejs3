@@ -47,5 +47,7 @@ vue({
             includeAbsolute: false,
         },
     },
+    refresh: true,
 }),
 ```
+
