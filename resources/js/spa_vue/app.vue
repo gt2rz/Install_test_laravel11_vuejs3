@@ -1,18 +1,15 @@
 <template>
     <div>
         <DefaultLayout>
-            <h1>Welcome!!!!</h1>
+            <Welcome 
+                title="Welcome to Vue 3 with Vite" 
+            />
         </DefaultLayout>
     </div>
 </template>
 
-<script>
+<script setup lang="ts">
     import DefaultLayout from './layouts/DefaultLayout.vue';
+    import Welcome from './components/Welcome.vue';
 
-    export default {
-        name: 'App',
-        components: {
-            DefaultLayout
-        }
-    }
 </script>
