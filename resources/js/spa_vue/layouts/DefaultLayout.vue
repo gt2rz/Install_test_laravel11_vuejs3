@@ -3,16 +3,15 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <router-link to="/">Home</router-link>
+                    <router-link to="/about">About</router-link>
                 </ul>
-            </nav> 
+            </nav>
         </header>
-        <slot></slot>
+        <main>
+            <router-view />
+        </main>
     </div>
 </template>
 
-<script setup>
-    
-</script>
+<script setup></script>
