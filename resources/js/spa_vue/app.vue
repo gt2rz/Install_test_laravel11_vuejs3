@@ -1,15 +1,12 @@
 <template>
     <div>
-        <DefaultLayout>
-            <Welcome 
-                title="Welcome to Vue 3 with Vite" 
-            />
-        </DefaultLayout>
+        <Layout>
+            <Welcome title="Welcome to Vue 3 with Vite" />
+        </Layout>
     </div>
 </template>
 
 <script setup lang="ts">
-    import DefaultLayout from './layouts/DefaultLayout.vue';
-    import Welcome from './components/Welcome.vue';
-
+import Layout from "./layouts/DefaultLayout/index.vue";
+import Welcome from "./components/Welcome.vue";
 </script>
