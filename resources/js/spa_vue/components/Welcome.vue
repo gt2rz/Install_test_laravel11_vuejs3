@@ -14,6 +14,9 @@
 
 <template>
     <div>
+        <h1 class="text-3xl font-bold underline">
+            Hello world!
+        </h1>
         <h1>Welcomerrr!!!!</h1>
         <h2>{{ title }}</h2>
         <h3 v-if="subtitle">{{ subtitle }}</h3>
