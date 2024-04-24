@@ -25,7 +25,11 @@ export default defineConfig({
         },
     },
     test: {
-        include: ["resources/js/**/*.spec.ts", "resources/js/**/*.test.ts"],
-        exclude: ["node_modules", "public", "resources/js/vendor", ],
+        include: [
+            "resources/js/spa_vue/**/*.spec.ts",
+            "resources/js/spa_vue/**/*.test.ts",
+        ],
+        globals: true,
+        environment: "happy-dom",
     },
 });
