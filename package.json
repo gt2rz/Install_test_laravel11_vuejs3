@@ -4,10 +4,13 @@
     "scripts": {
         "dev": "vite",
         "build": "npm run type-check && vite build",
-        "type-check": "vue-tsc --noEmit"
+        "type-check": "vue-tsc --noEmit",
+        "test": "vitest",
+        "coverage": "vitest run --coverage"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^5.0.4",
+        "@vitest/coverage-v8": "^1.5.1",
         "@vue/tsconfig": "^0.5.1",
         "autoprefixer": "^10.4.19",
         "axios": "^1.6.4",
@@ -23,6 +26,7 @@
         "tailwindcss": "^3.4.3",
         "typescript": "^5.2.2",
         "vite": "^5.0",
+        "vitest": "^1.5.1",
         "vue-tsc": "^2.0.6"
     },
     "dependencies": {
