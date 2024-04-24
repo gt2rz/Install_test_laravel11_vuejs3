@@ -14,12 +14,15 @@ import router from '../../router';
                     {{ section.title.toUpperCase() }}
                 </p>
                 <div
-                    class="flex h-10 w-full cursor-pointer items-center rounded-lg px-4 text-blue-400 hover:bg-gray-200"
+                    :class="`flex h-10 w-full cursor-pointer items-center rounded-lg px-4 text-blue-400  ${isRouteActive(link.path) ? 'bg-blue-500 text-white ' : 'hover:bg-gray-200'}`"
                     v-for="link in section.links"
                 >
                     <span v-html="link.icon"></span>
 
-                    <router-link :to="link.path" class="text-gray-700">
+                    <router-link
+                        :to="link.path"
+                        :class="`text-gray-700 ${isRouteActive(link.path) ? 'font-bold text-white' : ''}`"
+                    >
                         {{ link.title }}
                     </router-link>
                 </div>
@@ -29,5 +32,12 @@ import router from '../../router';
 </template>
 
 <script setup lang="ts">
+import { useRoute } from "vue-router";
 import { links } from "../../links";
+
+const route = useRoute();
+
+const isRouteActive = (routeName: string) => {
+    return routeName === route.path;
+};
 </script>
