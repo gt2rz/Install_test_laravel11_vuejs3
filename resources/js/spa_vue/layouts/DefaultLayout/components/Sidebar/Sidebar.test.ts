@@ -96,7 +96,7 @@ describe("Sidebar.vue", () => {
                 await wrappedLinks[numberOfLinksInSection].trigger("click");
                 await nextTick();
                 //
-                await new Promise((resolve) => setTimeout(resolve, 100)); // Add a delay after triggering the click event
+                // await new Promise((resolve) => setTimeout(resolve, 100)); // Add a delay after triggering the click event
                 // console.log(router.currentRoute.value.path);
 
                 expect(router.currentRoute.value.path).toBe(link.path);
