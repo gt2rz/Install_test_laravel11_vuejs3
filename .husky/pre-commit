@@ -29,6 +29,6 @@ if [ $? -ne 0 ]; then
 fi
 
 # Exit successfully
-echo "Successfully pushed changes"
+echo "\e[1;32mSuccessfully pushed changes\e[0m"
 exit 0
 
