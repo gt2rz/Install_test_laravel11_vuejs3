@@ -2,8 +2,8 @@
 # This script runs the pre-commit hook
 
 if [ -z "$(git status --porcelain)" ]; then
-  echo "\n\e[1;31m----- No changes to commit -----\e[0m\n"
-  exit 1
+    echo "\n\e[1;31m----- No changes to commit -----\e[0m\n"
+    exit 1
 fi
 
 # Run the pre-commit hook
