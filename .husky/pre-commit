@@ -12,7 +12,7 @@ if [ -z "$(git diff --cached --name-only)" ]; then
     fi
 
     # Add the changes
-    echo "\e[1;33mWARNING: Since there are changes, they will be added to git (git add .) \e[0m\n"
+    echo "\e[1;33mWARNING: Since there are changes, they will be added to git ( git add . ) for to continue. \e[0m\n"
     git add .
 
 fi
@@ -21,30 +21,30 @@ fi
 echo "\n\e[1;32m[ START PRE-COMMIT HOOK ]\e[0m"
 
 # Run lint-staged to check the files
-echo "\n\e[1;32m***** Running lint-staged *****\e[0m"
+echo "\n\e[1;32mRunning lint-staged...\e[0m"
 npx lint-staged
 
 # Add the changes
-echo "\n\e[1;32m***** Adding changes to git *****\e[0m"
+echo "\n\e[1;32mAdding changes to git post lint-staged...\e[0"
 git add .
 
 # Commit the changes with a message indicating that the pre-commit hook was run and skip the pre-commit hook
-echo "\n\e[1;32m***** Committing changes *****\e[0m"
+echo "\n\e[1;32mCommitting changes...\e[0m"
 git commit -m "chore: pre-commit hook" --no-verify
 
 # Push the changes
-echo "\n\e[1;32m***** Pushing changes *****\e[0m"
+echo "\n\e[1;32mPushing changes...\e[0m"
 git push
 
 # If the push failed, then exit with an error
 if [ $? -ne 0 ]; then
-echo "\n\e[1;31m----- Failed to push changes -----\e[0m\n"
+echo "\n\e[1;31mERROR: Failed to push changes...\e[0m\n"
   exit 1
 fi
 
 # Exit successfully
-echo "\n\e[1;32m***** Successfully pushed changes *****\e[0m\n"
+echo "\n\e[1;32mSuccessfully pushed changes!!!\e[0m\n"
 
-echo "\n\e[1;32m***** FINISHED PRE-COMMIT HOOK *****\e[0m\n"
+echo "\n\e[1;32m[ FINISHED PRE-COMMIT HOOK ]\e[0m\n"
 exit 0
 
