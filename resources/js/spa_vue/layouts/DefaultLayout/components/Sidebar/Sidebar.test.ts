@@ -94,7 +94,7 @@ describe("Sidebar.vue", () => {
         links.forEach((section: SidebarSection, index: number) => {
             section.links.forEach(async (link: Link, linkIndex: number) => {
                 await wrappedLinks[numberOfLinksInSection].trigger("click");
-                // await nextTick();
+                await nextTick();
                 //
                 // await new Promise((resolve) => setTimeout(resolve, 100)); // Add a delay after triggering the click event
                 // console.log(router.currentRoute.value.path);
