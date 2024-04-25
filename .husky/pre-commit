@@ -19,7 +19,7 @@ echo "Committing changes"
 git commit -m "chore: pre-commit hook" --no-verify
 
 # Push the changes
-echo "Pushing changes"
+echo -e "\e[1;32mPushing changes\e[0m"
 git push
 
 # If the push failed, then exit with an error
