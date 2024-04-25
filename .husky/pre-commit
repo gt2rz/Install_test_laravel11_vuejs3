@@ -2,10 +2,11 @@
 # This script runs the pre-commit hook
 
 # Run the pre-commit hook
+echo "Running pre-commit hook"
 npx lint-staged
 
-
 # # Add the changes
+echo "Adding changes to git"
 git add .
 
 if [ -z "$(git status --porcelain)" ]; then
@@ -14,9 +15,11 @@ if [ -z "$(git status --porcelain)" ]; then
 fi
 
 # Commit the changes with a message indicating that the pre-commit hook was run and skip the pre-commit hook
+echo "Committing changes"
 git commit -m "chore: pre-commit hook" --no-verify
 
 # Push the changes
+echo "Pushing changes"
 git push
 
 # If the push failed, then exit with an error
@@ -25,5 +28,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+# Exit successfully
+echo "Successfully pushed changes"
 exit 0
 
