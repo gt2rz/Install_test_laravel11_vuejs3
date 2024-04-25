@@ -2,17 +2,17 @@
 # This script runs the pre-commit hook
 
 # Run the pre-commit hook
-echo -e "\n\e[1;32m***** Running pre-commit hook *****\e[0m/n"
+echo -e "\n\e[1;32m***** Running pre-commit hook *****\e[0m\n"
 npx lint-staged
-
-# # Add the changes
-echo "\n\e[1;32m***** Adding changes to git *****\e[0m\n"
-git add .
 
 if [ -z "$(git status --porcelain)" ]; then
   echo "\n\e[1;31m----- No changes to commit -----\e[0m\n"
   exit 0
 fi
+
+# # Add the changes
+echo "\n\e[1;32m***** Adding changes to git *****\e[0m\n"
+git add .
 
 # Commit the changes with a message indicating that the pre-commit hook was run and skip the pre-commit hook
 echo "\n\e[1;32m***** Committing changes *****\e[0m\n"
