@@ -1,3 +1,14 @@
+export type Link = {
+    title: string;
+    path: string;
+    icon: string;
+};
+
+export type SidebarSection = {
+    title: string;
+    links: Link[];
+};
+
 export const links = [
     {
         title: "Main",
