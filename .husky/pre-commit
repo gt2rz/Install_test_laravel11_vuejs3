@@ -7,7 +7,7 @@ if [ -z "$(git status --porcelain)" ]; then
 fi
 
 # Run the pre-commit hook
-echo "\n\e[1;32m***** RUNNING PRE-COMMIT HOOK *****\e[0m\n"
+echo "\n\e[1;32m***** START PRE-COMMIT HOOK *****\e[0m\n"
 
 # Run lint-staged to check the files
 echo "\n\e[1;32m***** Running lint-staged *****\e[0m\n"
