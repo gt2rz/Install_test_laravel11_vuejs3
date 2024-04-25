@@ -7,8 +7,9 @@
         "type-check": "vue-tsc --noEmit",
         "test": "vitest",
         "coverage": "vitest run --coverage.includes='resources/js/spa_vue/**/*.spec.ts','resources/js/spa_vue/**/*.test.ts'",
-        "lint": "eslint --ext .ts,.vue --fix .",
-        "format": "prettier --write ."
+        "lint": "eslint --ext .js,.ts,.vue --fix .",
+        "format": "prettier --write .",
+        "prepare": "husky install"
     },
     "devDependencies": {
         "@testing-library/vue": "^8.0.3",
@@ -40,17 +41,6 @@
         "pinia": "^2.1.7",
         "vue": "^3.4.24",
         "vue-router": "^4.3.2"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "*.{vue, ts, js}": [
-            "npm run test",
-            "npm run lint",
-            "npm run format"
-        ]
     }
+
 }
