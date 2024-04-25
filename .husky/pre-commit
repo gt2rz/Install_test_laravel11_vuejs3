@@ -42,7 +42,7 @@ echo "\n\e[1;31mERROR: Failed to push changes...\e[0m\n"
 fi
 
 # Run git gc to clean up the repository and remove any dangling objects
-git gc --prune=now
+# git gc --prune=now
 
 # Exit successfully
 echo "\n\e[1;32mSuccessfully pushed changes!!!\e[0m"
