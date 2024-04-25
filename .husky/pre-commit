@@ -2,33 +2,33 @@
 # This script runs the pre-commit hook
 
 # Run the pre-commit hook
-echo "\e[1;32m***** Running pre-commit hook *****\e[0m"
+echo -e "\n\e[1;32m***** Running pre-commit hook *****\e[0m/n"
 npx lint-staged
 
 # # Add the changes
-echo "\e[1;32m***** Adding changes to git *****\e[0m"
+echo "\n\e[1;32m***** Adding changes to git *****\e[0m\n"
 git add .
 
 if [ -z "$(git status --porcelain)" ]; then
-  echo "\e[1;31m----- No changes to commit -----\e[0m"
+  echo "\n\e[1;31m----- No changes to commit -----\e[0m\n"
   exit 0
 fi
 
 # Commit the changes with a message indicating that the pre-commit hook was run and skip the pre-commit hook
-echo "Committing changes"
+echo "\n\e[1;32m***** Committing changes *****\e[0m\n"
 git commit -m "chore: pre-commit hook" --no-verify
 
 # Push the changes
-echo "\e[1;32m***** Pushing changes *****\e[0m"
+echo "\n\e[1;32m***** Pushing changes *****\e[0m\n"
 git push
 
 # If the push failed, then exit with an error
 if [ $? -ne 0 ]; then
-echo "\e[1;31m----- Failed to push changes -----\e[0m"
+echo "\n\e[1;31m----- Failed to push changes -----\e[0m\n"
   exit 1
 fi
 
 # Exit successfully
-echo "\e[1;32m***** Successfully pushed changes *****\e[0m"
+echo "\n\e[1;32m***** Successfully pushed changes *****\e[0m\n"
 exit 0
 
