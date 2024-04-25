@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
-# This script runs the pre-commit hook
 
-#TODO: Add validation to check if exists staged files to commit
+# This script runs the pre-commit hook
 if [ -z "$(git diff --cached --name-only)" ]; then
     echo "\n\e[1;31mERROR: No staged files to commit\e[0m"
 
