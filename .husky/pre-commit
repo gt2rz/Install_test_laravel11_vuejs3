@@ -29,7 +29,7 @@ git add .
 
 # Commit the changes with a message indicating that the pre-commit hook was run and skip the pre-commit hook
 echo "\n\e[1;32mCommitting changes...\e[0m"
-git commit -m "chore: pre-commit hook" --no-verify
+git commit -m "$(git log --format=%B -n 1 HEAD)" --no-verify
 
 # Push the changes
 echo "\n\e[1;32mPushing changes...\e[0m"
