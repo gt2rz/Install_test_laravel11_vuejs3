@@ -3,22 +3,22 @@
 
 #TODO: Add validation to check if exists staged files to commit
 if [ -z "$(git diff --cached --name-only)" ]; then
-    echo "\n\e[1;31m----- No staged files to commit -----\e[0m"
+    echo "\n\e[1;31mERROR: No staged files to commit\e[0m"
 
     # Check if there are any changes to commit
     if [ -z "$(git status --porcelain)" ]; then
-        echo "\n\e[1;31m----- No changes to commit -----\e[0m\n"
+        echo "\n\e[1;31mERROR: No changes to commit\e[0m\n"
         exit 1
     fi
 
     # Add the changes
-    echo "\e[1;32m[ Adding existing changes to git ]\e[0m\n"
+    echo "\e[1;33mWARNING: Since there are changes, they will be added to git (git add .) \e[0m\n"
     git add .
 
 fi
 
 # Run the pre-commit hook
-echo "\n\e[1;32m***** START PRE-COMMIT HOOK *****\e[0m"
+echo "\n\e[1;32m[ START PRE-COMMIT HOOK ]\e[0m"
 
 # Run lint-staged to check the files
 echo "\n\e[1;32m***** Running lint-staged *****\e[0m"
