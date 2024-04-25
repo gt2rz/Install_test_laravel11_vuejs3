@@ -1,13 +1,13 @@
 #!/usr/bin/env sh
 # This script runs the pre-commit hook
 
-# Run the pre-commit hook
-echo "\n\e[1;32m***** Running pre-commit hook *****\e[0m\n"
-
 if [ -z "$(git status --porcelain)" ]; then
   echo "\n\e[1;31m----- No changes to commit -----\e[0m\n"
   exit 1
 fi
+
+# Run the pre-commit hook
+echo "\n\e[1;32m***** RUNNING PRE-COMMIT HOOK *****\e[0m\n"
 
 # Run lint-staged to check the files
 echo "\n\e[1;32m***** Running lint-staged *****\e[0m\n"
@@ -33,5 +33,7 @@ fi
 
 # Exit successfully
 echo "\n\e[1;32m***** Successfully pushed changes *****\e[0m\n"
+
+echo "\n\e[1;32m***** FINISHED PRE-COMMIT HOOK *****\e[0m\n"
 exit 0
 
