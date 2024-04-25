@@ -1,6 +1,3 @@
 import { defineStore } from "pinia";
 
-export const useGlobalStore = defineStore("global", {
-
-    
-});
+export const useGlobalStore = defineStore("global", {});

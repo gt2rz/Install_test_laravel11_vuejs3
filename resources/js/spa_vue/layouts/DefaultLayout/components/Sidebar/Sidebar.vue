@@ -17,7 +17,10 @@ import router from '../../router';
                     :class="`flex h-10 w-full cursor-pointer items-center rounded-lg px-4 text-blue-400  ${isRouteActive(link.path) ? 'bg-blue-500 text-white ' : 'hover:bg-gray-200'}`"
                     v-for="link in section.links"
                 >
-                    <span class="sidebar__section_icon" v-html="link.icon"></span>
+                    <span
+                        class="sidebar__section_icon"
+                        v-html="link.icon"
+                    ></span>
 
                     <router-link
                         :to="link.path"

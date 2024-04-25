@@ -1,12 +1,10 @@
 <script setup lang="ts">
-
 interface Props {
     title: string;
     subtitle?: string;
 }
 
 const { title, subtitle } = defineProps<Props>();
-
 </script>
 
 <template>

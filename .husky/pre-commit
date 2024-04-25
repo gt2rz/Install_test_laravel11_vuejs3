@@ -1,0 +1,29 @@
+#!/usr/bin/env sh
+# This script runs the pre-commit hook
+
+# Run the pre-commit hook
+npx lint-staged
+
+
+# # Add the changes
+git add .
+
+if [ -z "$(git status --porcelain)" ]; then
+  echo "No changes to commit"
+  exit 0
+fi
+
+# Commit the changes with a message indicating that the pre-commit hook was run and skip the pre-commit hook
+git commit -m "chore: pre-commit hook" --no-verify
+
+# Push the changes
+git push
+
+# If the push failed, then exit with an error
+if [ $? -ne 0 ]; then
+  echo "Failed to push changes"
+  exit 1
+fi
+
+exit 0
+

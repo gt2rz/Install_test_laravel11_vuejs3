@@ -1,4 +1,4 @@
-import './bootstrap.js';
-import spa from './spa_vue/index.ts';
+import "./bootstrap.js";
+import spa from "./spa_vue/index.ts";
 
-spa.mount('#app');
+spa.mount("#app");

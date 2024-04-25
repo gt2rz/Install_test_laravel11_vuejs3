@@ -18,6 +18,3 @@ test("it should work with props", () => {
     getByText("This is a title");
     getByText("Subtitle");
 });
-
-
-
