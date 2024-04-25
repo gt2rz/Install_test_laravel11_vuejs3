@@ -43,7 +43,7 @@ echo "\n\e[1;31mERROR: Failed to push changes...\e[0m\n"
 fi
 
 # Exit successfully
-echo "\n\e[1;32mSuccessfully pushed changes!!!\e[0m\n"
+echo "\n\e[1;32mSuccessfully pushed changes!!!\e[0m"
 
 echo "\n\e[1;32m[ FINISHED PRE-COMMIT HOOK ]\e[0m\n"
 exit 0
