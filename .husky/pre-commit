@@ -3,7 +3,7 @@
 
 #TODO: Add validation to check if exists staged files to commit
 if [ -z "$(git diff --cached --name-only)" ]; then
-    echo "\n\e[1;31m----- No staged files to commit -----\e[0m\n"
+    echo "\n\e[1;31m----- No staged files to commit -----\e[0m"
 
     # Check if there are any changes to commit
     if [ -z "$(git status --porcelain)" ]; then
@@ -12,28 +12,28 @@ if [ -z "$(git diff --cached --name-only)" ]; then
     fi
 
     # Add the changes
-    echo "\n\e[1;32m***** Adding changes to git *****\e[0m\n"
+    echo "\e[1;32m[ Adding existing changes to git ]\e[0m\n"
     git add .
 
 fi
 
 # Run the pre-commit hook
-echo "\n\e[1;32m***** START PRE-COMMIT HOOK *****\e[0m\n"
+echo "\n\e[1;32m***** START PRE-COMMIT HOOK *****\e[0m"
 
 # Run lint-staged to check the files
-echo "\n\e[1;32m***** Running lint-staged *****\e[0m\n"
+echo "\n\e[1;32m***** Running lint-staged *****\e[0m"
 npx lint-staged
 
 # Add the changes
-echo "\n\e[1;32m***** Adding changes to git *****\e[0m\n"
+echo "\n\e[1;32m***** Adding changes to git *****\e[0m"
 git add .
 
 # Commit the changes with a message indicating that the pre-commit hook was run and skip the pre-commit hook
-echo "\n\e[1;32m***** Committing changes *****\e[0m\n"
+echo "\n\e[1;32m***** Committing changes *****\e[0m"
 git commit -m "chore: pre-commit hook" --no-verify
 
 # Push the changes
-echo "\n\e[1;32m***** Pushing changes *****\e[0m\n"
+echo "\n\e[1;32m***** Pushing changes *****\e[0m"
 git push
 
 # If the push failed, then exit with an error
